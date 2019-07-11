@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+  
+
+<head> 
+
+<meta charset="UTF-8"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+
+<title>Document</title> 
+
+<style type="text/css">
+#btn {
+	background-color: #9C0;
+	height: 30px;
+	width: 100px;
+}
+#testArea {
+	display: none;
+}
+#testArea #conter {
+	background-color: #966;
+	height: 50px;
+	width: 50px;
+}
+</style>
+</head> 
+
+  
+
+<body> 
+
+<style> 
+
+.test-area { 
+
+border: 1px solid black; 
+
+width: 200px; 
+
+height: 100px; 
+
+background-color: rgba(0,0,0,0.83); 
+
+} 
+
+  
+
+.my-animation { 
+
+animation: frame-color-1 3s linear 0s 1; 
+
+-webkit-animation: frame-color-1 3s linear 0s 1; 
+
+} 
+
+  
+
+@keyframes frame-color-1 { 
+
+0% { 
+
+background: white; 
+
+} 
+
+50% { 
+
+background: rgba(0,0,0,0.83); 
+
+} 
+
+
+
+} 
+
+  
+
+@-webkit-keyframes frame-color-1 { 
+
+0% { 
+
+background: white; 
+
+} 
+
+50% { 
+
+background: rgba(0,0,0,0.83); 
+
+} 
+
+
+
+} 
+
+</style> 
+
+<div id="testArea" class="test-area">点击这里看效果
+<div id="conter">1213111111111</div>
+</div> 
+<div id="btn">点击</div>
+<script> 
+
+var testArea = document.getElementById('testArea') 
+var btn=document.getElementById('btn')
+btn.onclick=function(){
+	testArea.style.display="block";
+	divClick()
+	}
+testArea.addEventListener("webkitAnimationEnd", animationEnd); 
+
+testArea.addEventListener("animationend", animationEnd); 
+
+function divClick() { 
+
+testArea.className = "test-area my-animation" 
+
+} 
+
+function animationEnd(e) { 
+
+testArea.className = "test-area" 
+
+} 
+
+
+
+
+
+
+  //hover 延时加载
+   (function(a) {
+    a.fn.hoverDelay = function(c, f, g, b) {
+        var g = g || 200,   //鼠标接触时间
+        b = b || 200,       //鼠标离开时间
+        f = f || c;
+        var e = [],
+        d = [];
+        return this.each(function(h) {
+            a(this).mouseenter(function() {
+                var i = this;
+                clearTimeout(d[h]);
+                e[h] = setTimeout(function() {
+                    c.apply(i)
+                },
+                g)
+            }).mouseleave(function() {
+                var i = this;
+                clearTimeout(e[h]);
+               d[h] = setTimeout(function() {
+                    f.apply(i)
+                },
+                b)
+            })
+        })
+    }
+})(jQuery);
+
+
+
+
+
+</script> 
+
+</body> 
+
+  
+
+</html>

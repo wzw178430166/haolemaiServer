@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../public/lib/jquery.min.js"></script>
+    <script>
+     $.ajax({
+         url:"http://localhost:3000",  //向服务器访问数据http://176.122.18.113:3000
+         type:"get",
+         success:function(result){
+             document.write(result);
+         }
+     });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

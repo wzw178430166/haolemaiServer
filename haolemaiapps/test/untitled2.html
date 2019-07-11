@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" src="../public/lib/jquery.min.js"></script>
+<style type="text/css">
+.s2{background-color:yellow!important;}
+.s4{background-color:aqua;}
+</style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+// var handlerInOut = function(){alert("111");};
+ 
+$(document).ready(function(){
+    function handlerInOut(){
+        //alert("222");
+        $(this).toggleClass('s2');
+    }
+    $('.s4').bind('mouseover mouseleave',handlerInOut);
+    //$('.s4').hover(handlerInOut);
+});
+ 
+</script>
+<head/>
+<body>
+<div class="s4" >hello jQuery 4</div><br />
+</body>
+</html>

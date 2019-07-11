@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+#one1 {
+	background-color: #03C;
+	height: 500px;
+	width: 100%;
+}
+#one2 {
+	height: 700px;
+	width: 100%;
+	background-color: #3C6;
+}
+#one3 {
+	height: 1500px;
+	width: 100%;
+	background-color: #F30;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#scrolls {
+	background-color: #CCC;
+	height: 100%;
+	width: 15px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#scrolls .scrollDiv {
+	 width:15px;
+	 position:absolute; 
+	 top:0; 
+	 background:#666; 
+	 border-radius:10px;
+	 height:50px;
+}
+</style>
+</head>
+
+<body>
+   <!-- 动态添加滚动条，js加载不了还可以用浏览器自带的滚动条-->
+<!--<div id="scrolls">
+ <div class="scrollDiv"></div>
+</div>-->
+<div id="one1"></div>
+<div id="one2"></div>
+<div id="one3"></div>
+</body>
+<script>
+var doc=document;
+//  动态添加滚动条，js加载不了还可以用浏览器自带的滚动条
+doc.body.style.overflow="hidden";
+var _wheelData=-1;
+var mainBox=doc.getElementById('mainBox');
+// 绑定事件兼容方法
+function bind(obj,type,handler){
+ var node=typeof obj=="string"?$(obj):obj;
+ if(node.addEventListener){
+  node.addEventListener(type,handler,false);
+ }else if(node.attachEvent){
+  node.attachEvent('on'+type,handler);
+ }else{
+  node['on'+type]=handler;
+ }
+}
+  // 鼠标滑轮兼容方法
+function mouseWheel(obj,handler){
+ var node=typeof obj=="string"?$(obj):obj;
+  bind(node,'mousewheel',function(event){
+   var data=-getWheelData(event);
+   handler(data);
+   if(document.all){
+    window.event.returnValue=false;
+   }else{
+    event.preventDefault();
+   }
+  });
+  //火狐
+  bind(node,'DOMMouseScroll',function(event){
+   var data=getWheelData(event);
+   handler(data);
+   event.preventDefault();
+  });
+    //获取鼠标滑轮 wheelDate 兼容方法
+  function getWheelData(event){
+   var e=event||window.event;
+   return e.wheelDelta?e.wheelDelta:e.detail*40;
+  }
+};
+  //内容元素克隆添加方法
+function addScroll(){
+ this.init.apply(this,arguments);
+}
+addScroll.prototype={
+	
+	};
+	new addScroll('mainBox','content','scrollDiv');
+</script>
+</html>

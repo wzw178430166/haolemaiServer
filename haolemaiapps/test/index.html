@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<style type="text/css">
+#wrap {
+	height: 300px;
+	width: 400px;
+	border: 1px solid #0CC;
+	margin:0 auto;
+	position:relative;
+}
+#wrap ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+	}
+#wrap ul{
+	position:absolute;
+	bottom:0;
+	}	
+	li{
+	width:10px;
+	height:10px;
+	border:1px solid red;
+	box-sizing:	border-box;
+	float:left;
+	
+		}
+</style>
+<script src="../public/lib/jquery.min.js"></script>
+<script>
+   
+		function creat(father,index){
+			console.log('aa');
+			var ul=$('<ul/>');
+			father.append(ul);
+			for(var i=0;i<20;i++){
+				var li=$('<li/>');
+				ul.append(li);
+				}
+				ul.css({"bottom":index*$('#wrap li').width()});
+				
+				move(father,ul);
+			
+			}
+	
+			function move(wrap,tab){
+					//var ul=$('#wrap ul')
+			tab.animate({
+				left:(warp.width())-(tab.width()),
+				},3000,function(){
+					tab.animate({
+						left:0,
+						},3000,function(){
+							move(wrap,tab);
+							});
+					});
+				}	  
+</script>
+</head>
+
+<body>
+<div id="wrap">
+<!--<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>-->
+
+</div>
+<div id="eiw">
+<select name="aa">
+<option value="bb">男</option>
+<option value="cc">女</option>
+<option value="dd">中</option>
+</select>
+</div>
+</body>
+<script>
+ var warp=$('#wrap');
+ var index=0;
+		  warp.click(function(){
+			  	var uls=$('#wrap ul');
+				$($(uls[uls.length-1])).stop();
+				//alert(li);
+			  creat(warp,index);
+			  index++
+			  });
+			  
+			//选择段落里面的所有a连接
+			var alink=$('p>a');
+			
+			var option=$('#eiw select');
+			option.change(function(){
+				var selects=$('#eiw option:selected');
+				alert(selects.text());
+				});
+			var heref=$('#ewg').attr('href');
+			heref.attr('href',"eeee");
+</script>
+</html>

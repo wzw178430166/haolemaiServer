@@ -1,0 +1,12 @@
+$('#sign_denglu').on('click',function(){
+				$('#sign_in').show();
+				$('#sign_ins').addClass('mongolia').fadeIn(1500);
+					$(".sign_content").stop(true,true).fadeIn(1700);
+				});
+			
+			$('#sign_Close').on('click',function(){
+				  $('#sign_ins').stop(true,true);
+				  $('#sign_ins').removeClass('mongolia');
+					/*$(".sign_content").stop(true,true);*/
+				$('#sign_in').css({"display":"none"});
+				});
