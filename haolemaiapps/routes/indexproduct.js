@@ -8,7 +8,7 @@ var index=express.Router();
 //引入连接池
 var pool=require('../pool/pool.js');
 
-   //获取首页传回数据，首页轮播图  导航产品轮播图11111111111111111111
+   //获取首页传回数据，首页轮播图  导航产品轮播图11111111111111111111555555
       index.get("/",(req,res)=>{
             var sql=`SELECT * FROM wy_index_carousel where seq_recommended!=0 ORDER BY seq_recommended`;
         pool.query(sql,[],(err,result)=>{
