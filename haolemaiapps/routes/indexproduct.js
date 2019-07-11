@@ -37,6 +37,6 @@ var pool=require('../pool/pool.js');
 
 
 
-
+//lalalalalala
 //导出首页数据路由   /index
 module.exports=index;
