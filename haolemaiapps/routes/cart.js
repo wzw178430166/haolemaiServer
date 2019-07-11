@@ -1,4 +1,4 @@
-//创建express模块111111111555555555555555588888888888888888888
+//创建express模块
 const express=require('express');
 //express下创建购物车路由器    
 var Cart=express.Router();
@@ -7,7 +7,7 @@ var pool=require('../pool/pool.js');
 //引入session模块
  //配置session
 
-   //登录后查看自己购物车的商品111111111111111
+   //登录后查看自己购物车的商品
  Cart.get("/cart",(req,res)=>{ 
     //1:参数(无参数)
     var uid = req.session.uid;
