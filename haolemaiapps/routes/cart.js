@@ -7,7 +7,7 @@ var pool=require('../pool/pool.js');
 //引入session模块
  //配置session
 
-   //登录后查看自己购物车的商品
+   //登录后查看自己购物车的商品111111111111111
  Cart.get("/cart",(req,res)=>{ 
     //1:参数(无参数)
     var uid = req.session.uid;
