@@ -330,3 +330,36 @@ INSERT INTO wy_cart VALUES(null,'011.jpg',100,'罗技鼠标',1,1);
 INSERT INTO wy_cart VALUES(null,'012.jpg',110,'内存条',1,1);
 INSERT INTO wy_cart VALUES(null,'011.jpg',101,'罗技鼠标3',1,1);
 INSERT INTO wy_cart VALUES(null,'011.jpg',102,'罗技鼠标4',1,1);
+
+CREATE TABLE index_brand(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  img_url VARCHAR(60),
+  title1  VARCHAR(40),
+  title2  VARCHAR(40),
+  amount  INT
+)
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/7130c1b280490ed32413394ededdab9d.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/4aacdfb594ee374f80f29e9b711295a0.jpg","99封顶","这么便宜不来看看吗",2);
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/f06371be2e10af4a70d82d4d35c1b6e1.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/263e74d4fcdff2897a95cfc1607a4409.jpg","99封顶","这么便宜不来看看吗",4);
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/1142129e9a241aeb6a58c93f038ea749.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/d1253f3987918e032566084cd358fbfc.jpg","99封顶","这么便宜不来看看吗",6);
+INSERT INTO index_brand VALUES(null,"http://i.okaybuy.cn/static/913a3c6b1b198ff52d1e9621fa2f0836.jpg","99封顶","这么便宜不来看看吗",6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
