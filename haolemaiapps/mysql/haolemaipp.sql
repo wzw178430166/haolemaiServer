@@ -105,7 +105,7 @@ INSERT INTO wy_nav_carouse VALUES
 (NULL,2,'img/index/banner4.png','轮播广告商品6',0,'./message/nav1/nav2.3.jpg'),
 (NULL,2,'img/index/banner4.png','轮播广告商品7',0,'./message/nav1/nav2.4.jpg');
 
-/*商品数据*/
+/*商品数据1111111111*/
 CREATE TABLE index_shangpin(
 id INT PRIMARY KEY AUTO_INCREMENT,
 img_url VARCHAR(60),
