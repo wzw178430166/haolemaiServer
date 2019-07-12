@@ -28,7 +28,7 @@ INSERT INTO users VALUES(NULL,'tom','123','18320006057');
 
 ########################################################################################################
 
-/****购物车****/
+/****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
   img_url VARCHAR(25),
