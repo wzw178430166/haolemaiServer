@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="./css/denglu.css">
+</head>
+<body>
+   <div class="center">
+      <!--头文字-->
+      <div class="imgs"><img src="./img/图标/魅族文字.png"></div>
+      <!--中间表单-->
+      <div class="centent">
+         <div class="biao">
+            <span class="wenzi">登录</span>
+            <div class="zhanghao">
+               <span>账号/邮箱*</span>
+               <input type="text" class="inp" id="uname">
+            </div>
+           <div class="mima">
+               <span>密码*</span>
+               <input type="password" class="inp" id="upwd">
+           </div>
+           <a href="#" class="wangji">忘记密码</a>
+         
+           <button class="btn" onclick="login()">登录</button>
+
+
+         </div>
+      </div>
+      <!--底部样式-->
+      <div>
+            <ul class="xia_ul qcfd">
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a href="#">了解魅族</a></li>
+              <li class="xia_li"><a class="di_a" href="#">了解魅族</a></li>
+            </ul>
+            <div class="di_div">
+                ©2019 Meizu Telecom Equipment Co., Ltd. All rights reserved. 
+                <a href="#">粤ICP备13003602号</a>
+                <a href="#">合字B2-20170010 </a>
+                <a href="#">营业执照</a>
+                <a href="#">法律声明</a>
+                粤公网安备 44049102496009 号
+            </div>
+          </div>
+   </div>
+   <script>
+      function login(){
+         //1.dom接收数据
+         var u_name=uname.value;
+         var u_pwd=upwd.value;
+         //2.ajax异步连接服务器
+         //2.1创建异步对象
+         console.log(u_name);
+         console.log(u_pwd);
+         var xhr=new XMLHttpRequest();
+         //2.4创建监听，获取响应数据
+         xhr.onreadystatechange=function(){
+            if(xhr.readyState==4&&xhr.status==200){
+               var result=xhr.responseText;
+
+               if(result==1){
+                  alert("登录成功")
+               location.href="http://127.0.0.1:5501/index.html";
+               }else{
+                  alert("密码错误");
+               }
+            }
+         }
+         //2.2打开连接，创建请求
+         var url="http://127.0.0.1:3000/user/login";
+         xhr.open("post",url,true);
+         //2.3发送请求
+         //post的参数是通过请求主体发送的
+         var formdata="uname="+u_name+"&upwd="+u_pwd;
+         //由于ajax默认传输是text/plain
+         //无法传递特殊符号，我们需要更改消息头
+         //让ajax请求可以传递特殊符号
+      
+         
+         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+         xhr.send(formdata);
+      }
+   </script>
+</body>
+</html>
