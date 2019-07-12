@@ -105,6 +105,22 @@ INSERT INTO wy_nav_carouse VALUES
 (NULL,2,'img/index/banner4.png','轮播广告商品6',0,'./message/nav1/nav2.3.jpg'),
 (NULL,2,'img/index/banner4.png','轮播广告商品7',0,'./message/nav1/nav2.4.jpg');
 
+/*商品数据*/
+CREATE TABLE index_shangpin(
+id INT PRIMARY KEY AUTO_INCREMENT,
+img_url VARCHAR(60),
+title1 VARCHAR(40),
+title2 VARCHAR(40),
+amount INT
+);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_1.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_2.jpg","99封顶","这么便宜不来看看吗",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_3.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_4.jpg","99封顶","这么便宜不来看看吗",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_5.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",6);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",7);
+
 #########################################################################################################
 
 /**商品图片列表  轮播图         商品列表页**/
