@@ -105,7 +105,9 @@ INSERT INTO wy_nav_carouse VALUES
 (NULL,2,'img/index/banner4.png','轮播广告商品6',0,'./message/nav1/nav2.3.jpg'),
 (NULL,2,'img/index/banner4.png','轮播广告商品7',0,'./message/nav1/nav2.4.jpg');
 
-/*商品数据1111111111*/
+
+
+/*首页商品数据11*/
 CREATE TABLE index_shangpin(
 id INT PRIMARY KEY AUTO_INCREMENT,
 img_url VARCHAR(60),
@@ -120,6 +122,9 @@ INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpi
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_5.jpg","99封顶","这么便宜不来看看吗",5);
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",6);
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",7);
+
+
+
 
 #########################################################################################################
 
@@ -365,3 +370,28 @@ INSERT INTO wy_product_pic VALUES
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 943c733706c680eb5a605af7be689e259169f6fa
