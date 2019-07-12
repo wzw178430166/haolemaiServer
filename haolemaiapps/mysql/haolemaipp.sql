@@ -107,6 +107,24 @@ INSERT INTO wy_nav_carouse VALUES
 
 
 
+/*首页商品数据1115555555555555555888888888881111111*/
+CREATE TABLE index_shangpin(
+id INT PRIMARY KEY AUTO_INCREMENT,
+img_url VARCHAR(60),
+title1 VARCHAR(40),
+title2 VARCHAR(40),
+amount INT
+);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_1.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_2.jpg","99封顶","这么便宜不来看看吗",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_3.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_4.jpg","99封顶","这么便宜不来看看吗",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_5.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",6);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",7);
+
+
+
 
 #########################################################################################################
 
@@ -354,19 +372,6 @@ INSERT INTO wy_product_pic VALUES
 
 
 
-/****购物车****/
-CREATE TABLE wy_cart(
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  img_url VARCHAR(25),
-  price   DECIMAL(10,2),
-  title   VARCHAR(255),
-  count   INT,
-  uid     INT
-);
-INSERT INTO wy_cart VALUES(null,'011.jpg',100,'罗技鼠标',1,1);
-INSERT INTO wy_cart VALUES(null,'012.jpg',110,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',101,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',102,'罗技鼠标4',1,1);
 
 
 
