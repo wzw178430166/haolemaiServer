@@ -21,7 +21,7 @@ var pool=require('../pool/pool.js');
         })
         })
 
-      //首页品牌制造商   可以写在上面一次性请求
+      //首页品牌制造商   可以写在上面一次性请求1111111111111
         index.get("/brand",(req,res)=>{
             var sql=`SELECT * FROM index_shangpin`;
         pool.query(sql,[],(err,result)=>{
