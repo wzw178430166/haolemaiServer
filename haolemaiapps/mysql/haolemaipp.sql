@@ -7,7 +7,11 @@ CREATE DATABASE haolemaiapp CHARSET=UTF8;
 #进入该数据库
 USE haolemaiapp;
 
-#创建用户数据表
+
+
+###################################################################################################
+
+#创建用户数据表  个人中心
 CREATE TABLE users(
 	id INT AUTO_INCREMENT UNIQUE,
 	uname VARCHAR(20),
@@ -21,7 +25,28 @@ INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545..','13660132410'
 INSERT INTO users VALUES(NULL,'www178430166@qq.com','br18255545..','18320006057');
 INSERT INTO users VALUES(NULL,'tom','123','18320006057');
 
-#首页轮播广告商品
+
+########################################################################################################
+
+/****购物车****/
+CREATE TABLE wy_cart(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  img_url VARCHAR(25),
+  price   DECIMAL(10,2),
+  title   VARCHAR(255),
+  count   INT,
+  uid     INT
+);
+INSERT INTO wy_cart VALUES(null,'011.jpg',100,'罗技鼠标',1,1);
+INSERT INTO wy_cart VALUES(null,'012.jpg',110,'内存条',1,1);
+INSERT INTO wy_cart VALUES(null,'011.jpg',101,'罗技鼠标3',1,1);
+INSERT INTO wy_cart VALUES(null,'011.jpg',102,'罗技鼠标4',1,1);
+
+
+##################################################################################################
+
+
+#首页轮播广告商品   首页
 CREATE TABLE wy_index_carousel(
   cid INT PRIMARY KEY AUTO_INCREMENT,
   img VARCHAR(128),
@@ -60,7 +85,29 @@ INSERT INTO brand_manufacturer VALUES
 (NULL,'img/index/banner4.png','轮播广告商品5',0,'./message/break5.jpg','102'),
 (NULL,'img/index/banner4.png','轮播广告商品6',0,'./message/break1.jpg','105');
 
-/**商品图片列表  轮播图**/
+#首页导航栏轮播广告商品列表
+CREATE TABLE wy_nav_carouse(
+  nav INT PRIMARY KEY AUTO_INCREMENT,
+  laptop_id INT,    #每个导航栏产品应用所属的编号
+  img VARCHAR(128),  #图片名称
+  title VARCHAR(64),  #图片标题
+  seq_recommended TINYINT,  #商品的排名
+  href VARCHAR(128)   #图片地址
+);
+
+#首页导航栏商品轮播广告商品列表
+INSERT INTO wy_nav_carouse VALUES
+(NULL,1,'message/nav1/nav1.1.jpg','轮播广告商品1',1,'./message/nav1/nav1.1.jpg'),
+(NULL,1,'message/nav1/nav1.2.jpg','轮播广告商品2',2,'./message/nav1/nav1.2.jpg'),
+(NULL,1,'img/index/banner3.png','轮播广告商品3',3,'./message/nav1/nav1.3.jpg'),
+(NULL,2,'img/index/banner4.png','轮播广告商品4',4,'./message/nav1/nav2.1.jpg'),
+(NULL,2,'img/index/banner4.png','轮播广告商品5',5,'./message/nav1/nav2.2.jpg'),
+(NULL,2,'img/index/banner4.png','轮播广告商品6',0,'./message/nav1/nav2.3.jpg'),
+(NULL,2,'img/index/banner4.png','轮播广告商品7',0,'./message/nav1/nav2.4.jpg');
+
+#########################################################################################################
+
+/**商品图片列表  轮播图         商品列表页**/
 CREATE TABLE wy_laptop_pic(
   pid INT PRIMARY KEY AUTO_INCREMENT,
   laptop_id INT,              #商品编号
@@ -113,10 +160,93 @@ INSERT INTO wy_laptop_pic VALUES
 
 
 
+/****产品列表商品****/
+CREATE TABLE wy_index_product(
+  pid INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(64),   #标题
+  details VARCHAR(128),  #副标题
+  log_t VARCHAR(64),   #标签码 橙色的提示
+  product_title VARCHAR(64),  #商品名称
+  pic VARCHAR(128),  #商品图片
+  price DECIMAL(10,2),  
+  href VARCHAR(128),
+  seq_recommended TINYINT,
+  seq_new_arrival TINYINT,
+  seq_top_sale TINYINT,
+  original DECIMAL(10,2),
+  product_msg VARCHAR(128),
+  laptop_list INT            #商品编号
+);
+
+/****商品列表商品****/
+INSERT INTO wy_index_product VALUES
+(NULL, '夏季新品', '夏季热力爆品 抢先预览','限时购','男式运动弹力T桖','./message/nav2/summer/summer1.png', 6988, 'product.html?lid=1', 1, 1, 1,197,'舒适透气，弹力拉伸',1),
+(NULL, '小米Air 金属超轻薄', '夏季热力爆品 抢先预览','7月画册特惠','拉拉杯 无螺纹玻璃随行杯','./message/nav2/summer/summer2.png', 89, 'product.html?lid=2', 2, 2, 2,88,'量身定做，弹力拉伸',1),
+(NULL, '联想E480C 轻薄系列', '夏季热力爆品 抢先预览','特价','男式运动弹力T桖','./message/nav2/summer/summer3.png', 5399, 'product.html?lid=3', 3, 3, 3,97,'家的感觉，超薄避孕套',1),
+(NULL, '华硕RX310 金属超极本', '夏季热力爆品 抢先预览','7月画册特惠','男式运动弹力T桖','./message/nav2/summer/summer4.png', 55, 'product.html?lid=4', 4, 4, 4,64,'特价游，弹力拉伸',1),
+(NULL, '联想小新700 电竞版游戏本', '夏季热力爆品 抢先预览','好货内部价','男式运动弹力T桖','./message/nav2/summer/summer5.png', 85, 'product.html?lid=5', 5, 5, 5,97,'舒适透气，弹力拉伸',1),
+(NULL, '戴尔灵越燃7000 轻薄窄边', '夏季热力爆品 抢先预览','特价','男式运动弹力T桖','./message/nav2/summer/summer6.png', 5199, 'product.html?lid=6', 6, 6, 6,97,'三指一扣，一秒即开',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=7', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=8', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=9', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=10', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=11', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=12', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=13', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=14', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=15', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer2.png', 46, 'product.html?lid=16', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=17', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=18', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=19', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=20', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer9.png', 46, 'product.html?lid=21', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=22', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=23', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer10.png', 46, 'product.html?lid=24', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=25', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=26', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=27', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=28', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=29', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=30', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=31', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=32', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=33', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer2.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer10.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
+
+(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览','好货内部价','男式运动弹力T桖','./message/nav2/summer/summer8.png', 33, 'product.html', 0, 0, 0,97,'舒适透气，弹力拉伸',5);
 
 
+#########################################################################################################
 
-/**商品详情信息**/
+/**商品详情信息    商品详情页**/
 CREATE TABLE wy_product(
   lid INT PRIMARY KEY AUTO_INCREMENT,
   family_id INT,              #所属型号家族编号
@@ -214,119 +344,8 @@ INSERT INTO wy_product_pic VALUES
 (NULL, 4, 'img/product/sm/57ad8846N64ac3c79.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg');
 
 
-#首页导航栏轮播广告商品列表
-CREATE TABLE wy_nav_carouse(
-  nav INT PRIMARY KEY AUTO_INCREMENT,
-  laptop_id INT,    #每个导航栏产品应用所属的编号
-  img VARCHAR(128),  #图片名称
-  title VARCHAR(64),  #图片标题
-  seq_recommended TINYINT,  #商品的排名
-  href VARCHAR(128)   #图片地址
-);
+#######################################################################################################
 
-#首页导航栏商品轮播广告商品列表
-INSERT INTO wy_nav_carouse VALUES
-(NULL,1,'message/nav1/nav1.1.jpg','轮播广告商品1',1,'./message/nav1/nav1.1.jpg'),
-(NULL,1,'message/nav1/nav1.2.jpg','轮播广告商品2',2,'./message/nav1/nav1.2.jpg'),
-(NULL,1,'img/index/banner3.png','轮播广告商品3',3,'./message/nav1/nav1.3.jpg'),
-(NULL,2,'img/index/banner4.png','轮播广告商品4',4,'./message/nav1/nav2.1.jpg'),
-(NULL,2,'img/index/banner4.png','轮播广告商品5',5,'./message/nav1/nav2.2.jpg'),
-(NULL,2,'img/index/banner4.png','轮播广告商品6',0,'./message/nav1/nav2.3.jpg'),
-(NULL,2,'img/index/banner4.png','轮播广告商品7',0,'./message/nav1/nav2.4.jpg');
 
-/****产品列表商品****/
-CREATE TABLE wy_index_product(
-  pid INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(64),   #标题
-  details VARCHAR(128),  #副标题
-  log_t VARCHAR(64),   #标签码 橙色的提示
-  product_title VARCHAR(64),  #商品名称
-  pic VARCHAR(128),  #商品图片
-  price DECIMAL(10,2),  
-  href VARCHAR(128),
-  seq_recommended TINYINT,
-  seq_new_arrival TINYINT,
-  seq_top_sale TINYINT,
-  original DECIMAL(10,2),
-  product_msg VARCHAR(128),
-  laptop_list INT            #商品编号
-);
 
-/****商品列表商品****/
-INSERT INTO wy_index_product VALUES
-(NULL, '夏季新品', '夏季热力爆品 抢先预览','限时购','男式运动弹力T桖','./message/nav2/summer/summer1.png', 6988, 'product.html?lid=1', 1, 1, 1,197,'舒适透气，弹力拉伸',1),
-(NULL, '小米Air 金属超轻薄', '夏季热力爆品 抢先预览','7月画册特惠','拉拉杯 无螺纹玻璃随行杯','./message/nav2/summer/summer2.png', 89, 'product.html?lid=2', 2, 2, 2,88,'量身定做，弹力拉伸',1),
-(NULL, '联想E480C 轻薄系列', '夏季热力爆品 抢先预览','特价','男式运动弹力T桖','./message/nav2/summer/summer3.png', 5399, 'product.html?lid=3', 3, 3, 3,97,'家的感觉，超薄避孕套',1),
-(NULL, '华硕RX310 金属超极本', '夏季热力爆品 抢先预览','7月画册特惠','男式运动弹力T桖','./message/nav2/summer/summer4.png', 55, 'product.html?lid=4', 4, 4, 4,64,'特价游，弹力拉伸',1),
-(NULL, '联想小新700 电竞版游戏本', '夏季热力爆品 抢先预览','好货内部价','男式运动弹力T桖','./message/nav2/summer/summer5.png', 85, 'product.html?lid=5', 5, 5, 5,97,'舒适透气，弹力拉伸',1),
-(NULL, '戴尔灵越燃7000 轻薄窄边', '夏季热力爆品 抢先预览','特价','男式运动弹力T桖','./message/nav2/summer/summer6.png', 5199, 'product.html?lid=6', 6, 6, 6,97,'三指一扣，一秒即开',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=7', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=8', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=9', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=10', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=11', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=12', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=13', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=14', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=15', 0, 0, 0,97,'舒适透气，弹力拉伸',1),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer2.png', 46, 'product.html?lid=16', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=17', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=18', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=19', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=20', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer9.png', 46, 'product.html?lid=21', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=22', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=23', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer10.png', 46, 'product.html?lid=24', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=25', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=26', 0, 0, 0,97,'舒适透气，弹力拉伸',2),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=27', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=28', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=29', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=30', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=31', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=32', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=33', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',3),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer6.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer2.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer1.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',4),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer4.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',5),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer10.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer5.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer7.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览',NULL,'男式运动弹力T桖','./message/nav2/summer/summer8.png', 46, 'product.html?lid=1', 0, 0, 0,97,'舒适透气，弹力拉伸',6),
 
-(NULL, '神州战神Z7M 高性价比游戏本', '夏季热力爆品 抢先预览','好货内部价','男式运动弹力T桖','./message/nav2/summer/summer8.png', 33, 'product.html', 0, 0, 0,97,'舒适透气，弹力拉伸',5);
-
-/****购物车****/
-CREATE TABLE wy_cart(
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  img_url VARCHAR(25),
-  price   DECIMAL(10,2),
-  title   VARCHAR(255),
-  count   INT,
-  uid     INT
-);
-INSERT INTO wy_cart VALUES(null,'011.jpg',100,'罗技鼠标',1,1);
-INSERT INTO wy_cart VALUES(null,'012.jpg',110,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',101,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',102,'罗技鼠标4',1,1);
