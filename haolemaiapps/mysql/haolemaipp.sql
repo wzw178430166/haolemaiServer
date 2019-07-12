@@ -1,4 +1,4 @@
-#设置客户端连接的编码
+#设置客户端连接的编码kk
 SET NAMES UTF8;
 #丢弃数据库
 DROP DATABASE IF EXISTS haolemaiapp;
