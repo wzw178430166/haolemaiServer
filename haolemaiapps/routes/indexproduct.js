@@ -33,7 +33,20 @@ var pool=require('../pool/pool.js');
         }
         })
         })
-
+    //分类商品列表
+        index.get("/fenlei",(req,res)=>{
+           var j=req.query.j;
+            var sql="SELECT * FROM index_fenlei where biaoji=?";
+            pool.query(sql,[j],(err,result)=>{
+                if(err){
+                    console.log(err);
+                    res.send({code:0});
+                }else{
+                    res.send(result);
+                   console.log(result);
+                }
+            })
+        })
 
 
 

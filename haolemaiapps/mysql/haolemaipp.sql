@@ -142,11 +142,96 @@ INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xi
 INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong10.jpg","运动鞋",1);
 INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong11.jpg","外星来的鞋",1);
 INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong12.jpg","布鞋",1);
-
-
-
-
-
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu1.jpg","t桖",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu2.jpg","衬衫",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu3.jpg","长衬衫",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu4.png","长衣服",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu5.png","毛衣",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu6.png","灰毛衣",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu7.jpg","西装",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu8.png","夹克",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu9.png","衣服",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu10.png","裤子",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu11.png","裤子",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/yifu/yifu12.jpg","裤子",2);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie1.jpg","实力拖鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie2.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie3.jpg","实力皮鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie4.jpg","实力人字拖",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie5.jpg","黑色凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie6.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie7.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie8.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie9.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie10.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie11.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",3);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child1.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child2.jpg","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child3.jpg","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child4.jpg","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child5.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child6.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child7.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child8.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child9.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child10.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child11.png","儿童凉鞋",4);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/child/child12.png","儿童凉鞋",4);
+/*循环几次无用的商品*/
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie1.jpg","实力拖鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie2.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie3.jpg","实力皮鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie4.jpg","实力人字拖",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie5.jpg","黑色凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie6.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie7.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie8.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie9.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie10.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie11.jpg","实力凉鞋",5);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",5);
+/*----*/
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",6);
+/*----*/
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",7);
+/*------*/
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋",8);
 
 
 
@@ -395,8 +480,6 @@ INSERT INTO wy_product_pic VALUES
 
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -419,4 +502,3 @@ INSERT INTO wy_product_pic VALUES
 
 
 
->>>>>>> 943c733706c680eb5a605af7be689e259169f6fa
