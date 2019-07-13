@@ -107,7 +107,7 @@ INSERT INTO wy_nav_carouse VALUES
 
 
 
-/*首页商品数据11*/
+/*首页商品数据第一页和第三页共用*/
 CREATE TABLE index_shangpin(
 id INT PRIMARY KEY AUTO_INCREMENT,
 img_url VARCHAR(60),
@@ -116,12 +116,43 @@ title2 VARCHAR(40),
 amount INT
 );
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_1.jpg","99封顶","这么便宜不来看看吗",1);
-INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_2.jpg","99封顶","这么便宜不来看看吗",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_2.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_3.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_4.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_5.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",1);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai1.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai2.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai3.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai4.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai5.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai6.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai7.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai8.png","99封顶","这么便宜呢",2);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_1.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_2.jpg","99封顶","这么便宜不来看看吗",3);
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_3.jpg","99封顶","这么便宜不来看看吗",3);
-INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_4.jpg","99封顶","这么便宜不来看看吗",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_4.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_5.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",3);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai1.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai2.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai3.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai4.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai5.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai6.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai7.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/temai/temai8.png","99封顶","这么便宜呢",4);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_1.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_2.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_3.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_4.jpg","99封顶","这么便宜不来看看吗",5);
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_5.jpg","99封顶","这么便宜不来看看吗",5);
-INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",6);
-INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",7);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",5);
+INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",5);
+
 
 /*分类列表*/
 CREATE TABLE index_fenlei(
