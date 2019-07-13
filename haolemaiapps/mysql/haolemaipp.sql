@@ -123,6 +123,31 @@ INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpi
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_6.jpg","99封顶","这么便宜不来看看吗",6);
 INSERT INTO index_shangpin VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpin/article_7.jpg","99封顶","这么便宜不来看看吗",7);
 
+/*分类列表*/
+CREATE TABLE index_fenlei(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  img_url VARCHAR(90),
+  title  VARCHAR(40),
+  biaoji INT(50) 
+);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong1.jpg","跑步鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong2.png","休闲鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong3.jpg","未知鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong4.jpg","布鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong5.jpg","跑步鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong6.jpg","散步鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong7.jpg","品牌鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong8.jpg","子弹头鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong9.jpg","某品牌鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong10.jpg","运动鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong11.jpg","外星来的鞋",1);
+INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:8095/img/appimg/minImg/xie/yundong12.jpg","布鞋",1);
+
+
+
+
+
+
 
 
 
