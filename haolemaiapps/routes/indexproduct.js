@@ -23,17 +23,33 @@ var pool=require('../pool/pool.js');
 
       //首页品牌制造商   可以写在上面一次性请求1111111111111
         index.get("/brand",(req,res)=>{
-            var sql=`SELECT * FROM index_shangpin`;
-        pool.query(sql,[],(err,result)=>{
+            var j=req.query.j
+            console.log(j);
+            var sql=`SELECT * FROM index_shangpin where amount=?`;
+        pool.query(sql,[j],(err,result)=>{
             if(err){
             console.log(err);
             res.send({code:0});
         }else{
             res.send(result);
+           
         }
         })
         })
-
+    //分类商品列表
+        index.get("/fenlei",(req,res)=>{
+           var j=req.query.j;
+            var sql="SELECT * FROM index_fenlei where biaoji=?";
+            pool.query(sql,[j],(err,result)=>{
+                if(err){
+                   // console.log(err);
+                    res.send({code:0});
+                }else{
+                    res.send(result);
+                  // console.log(result);
+                }
+            })
+        })
 
 
 
