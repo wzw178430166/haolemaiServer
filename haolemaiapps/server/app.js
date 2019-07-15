@@ -47,9 +47,9 @@ server.use(bodyParser.urlencoded({
 const index=require('../routes/indexproduct');
 //引入用户路由器
 const userRouter=require('../routes/user.js');
-/*引入导航一级商品列表路由模块*/
+/*引入导航一级商品详情路由模块*/
 const details=require("../routes/details");
-/*引入商品详情路由模块*/
+/*引入商品列表路由模块*/
 const product=require("../routes/product");
 /*引入购物车路由模块*/
 const Cart=require("../routes/cart");
@@ -62,11 +62,11 @@ server.use('/user',userRouter);
 //使用首页商品路由器 挂载： /http://127.0.0.1:8080/index
 server.use('/index',index);
 
-/*使用导航一级商品列表路由模块*/
-server.use("/product_list",details);
+/*使用导航一级商品详情路由模块*/
+server.use("/details",details);
 
-/*使用商品详情路由模块*/
+/*使用商品列表路由模块*/
 server.use("/product",product);
 
-/*使用商品详情路由模块*/
+/*使用购物车路由模块*/
 server.use("/shopping",Cart);
