@@ -1,4 +1,4 @@
-//创建express模块111111111
+//创建express模块
 const express=require('express');
 //express下创建购物车路由器    
 var Cart=express.Router();
@@ -25,8 +25,6 @@ var pool=require('../pool/pool.js');
     })
     //3:json
   })
-
-
 
 
 //导出购物车路由器对象   /shopping
