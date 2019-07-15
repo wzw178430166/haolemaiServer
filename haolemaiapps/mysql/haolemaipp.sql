@@ -280,10 +280,10 @@ CREATE TABLE wy_laptop_pic(
 
 /**商品图片列表   轮播图**/
 INSERT INTO wy_laptop_pic VALUES
-(NULL, 1, './message/nav1/nav1.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 1, './message/nav1/nav1.2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 1, './message/nav1/nav1.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 1, './message/nav1/nav1.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
 (NULL, 2, './message/nav1/nav2.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
 (NULL, 2, './message/nav1/nav2.2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
 (NULL, 2, './message/nav1/nav2.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
