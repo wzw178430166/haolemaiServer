@@ -63,7 +63,7 @@ var pool=require('../pool/pool.js');
             var off=(pno-1)*ps;
             ps=parseInt(ps);//转换成整数
             pool.query(sql,[off,ps],(err,result)=>{
-                if(err)throw err;
+                if(err) throw err;
                 obj.data=result;//强行赋值
                 var sql="SELECT count(*) AS c FROM shangpin_list";
                 pool.query(sql,(err,result)=>{
