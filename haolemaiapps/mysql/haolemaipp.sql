@@ -1,4 +1,4 @@
-#设置客户端连接的编码
+#设置客户端连接的编码kk
 SET NAMES UTF8;
 #丢弃数据库
 DROP DATABASE IF EXISTS haolemaiapp;
@@ -24,6 +24,7 @@ INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545..','13533870622'
 INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545..','13660132410');
 INSERT INTO users VALUES(NULL,'www178430166@qq.com','br18255545..','18320006057');
 INSERT INTO users VALUES(NULL,'tom','123','18320006057');
+
 
 
 ########################################################################################################
@@ -475,6 +476,8 @@ INSERT INTO wy_product_pic VALUES
 
 
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -497,3 +500,4 @@ INSERT INTO wy_product_pic VALUES
 
 
 
+>>>>>>> 033078dc07d69071d1d83b2a356ce3a119441a3f
