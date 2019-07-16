@@ -36,7 +36,7 @@ var pool=require('../pool/pool.js');
         }
         })
         })
-    //分类商品列表
+    //分类商品主页列表
         index.get("/fenlei",(req,res)=>{
            var j=req.query.j;
             var sql="SELECT * FROM index_fenlei where biaoji=?";
@@ -50,7 +50,32 @@ var pool=require('../pool/pool.js');
                 }
             })
         })
-
+    //商品列表，分页显示
+        index.get("/commlist",(req,res)=>{
+            var pno =req.query.pno;
+            var ps=req.query.pageSize;
+            //设置默认值
+            if(!pno){pno=1}
+            if(!ps){ps=4}
+            //第一个sql语句，当前语句
+            var obj={code:1,msg:"查询成功"}
+            var sql="SELECT id,paixu,biaoji,img_url,title1,title2,price1,price2 FROM shangpin_list LIMIT ?,?";
+            var off=(pno-1)*ps;
+            ps=parseInt(ps);//转换成整数
+            pool.query(sql,[off,ps],(err,result)=>{
+                if(err)throw err;
+                obj.data=result;//强行赋值
+                var sql="SELECT count(*) AS c FROM shangpin_list";
+                pool.query(sql,(err,result)=>{
+                    if(err) throw err;
+                    //查询得到的是result[{c:?}]
+                    var pc=Math.ceil(result[0].c/ps);//计算当页内容
+                    obj.pc=pc;
+                    res.send(obj);
+                    console.log(pc);
+                })
+            })
+        })
 
 
 //lalalalalala
