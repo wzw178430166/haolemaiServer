@@ -12,7 +12,8 @@ details.get("/",(req,res)=>{
   var output={
     products:{},
     specs:[],
-    pics:[]
+    pics:[],
+    size:[]
   }
   if(lid!==undefined){
     var sql1=`select * from wy_product where lid=?`;
@@ -26,11 +27,16 @@ details.get("/",(req,res)=>{
         if(err) console.log(err);
         output.specs=result;
         //console.log(output);
-        var sql3=`select * from wy_product_pic where laptop_id=?`
+        var sql3=`select * from wy_product_pic where laptop_id=?`;
         pool.query(sql3,[lid],(err,result)=>{
           if(err) console.log(err);
           output.pics=result;
           //console.log(output);
+        });
+        var sql4=`select * from wy_details_size where lid=?`;
+        pool.query(sql4,[lid],(err,result)=>{
+          if(err) console.log(err);
+          output.size=result;
           res.send(output);
         })
       })
