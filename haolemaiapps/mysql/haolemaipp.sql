@@ -512,8 +512,6 @@ INSERT INTO wy_product_pic VALUES
 
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -536,4 +534,3 @@ INSERT INTO wy_product_pic VALUES
 
 
 
->>>>>>> 033078dc07d69071d1d83b2a356ce3a119441a3f
