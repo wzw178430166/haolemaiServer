@@ -37,10 +37,12 @@ CREATE TABLE wy_cart(
   count   INT,
   uid     INT
 );
-INSERT INTO wy_cart VALUES(null,'011.jpg',100,'罗技鼠标',1,1);
-INSERT INTO wy_cart VALUES(null,'012.jpg',110,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',101,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',102,'罗技鼠标4',1,1);
+INSERT INTO wy_cart VALUES(null,'/img/cart/487.jpg',238,'c',1,1);
+INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',278,'内存条',1,1);
+INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',268,'罗技鼠标3',1,1);
+INSERT INTO wy_cart VALUES(null,'',102,'罗技鼠标4',1,1);
+
+
 
 
 ##################################################################################################
@@ -370,28 +372,3 @@ INSERT INTO wy_product_pic VALUES
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 943c733706c680eb5a605af7be689e259169f6fa
