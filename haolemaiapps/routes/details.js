@@ -1,37 +1,42 @@
-const express=require("express")
-//创建商品列表路由  商品列表导航   尽量一次性请求完商品列表页所需要的数据 prouct_list.html
-const details=express.Router();
-const pool=require("../pool/pool.js")
+//创建express模块
+const express=require('express');
+//express下创建商品详情路由器    
+var details=express.Router();
+//引入连接池
+var pool=require('../pool/pool.js');
 
-//app.use("/details",Details)
-//服务端接口地址http://localhost:3000/details
-//客户端请求时:
-//http://localhost:3000/details?lid=1
 details.get("/",(req,res)=>{
+    console.log(req.query);
   var lid=req.query.lid;
-  console.log(lid,666);
+  console.log(lid);
   var output={
-    product:{},
-    productList:[],
+    products:{},
+    specs:[],
     pics:[],
+    size:[]
   }
   if(lid!==undefined){
     var sql1=`select * from wy_product where lid=?`;
     pool.query(sql1,[lid],(err,result)=>{
       if(err) console.log(err);
-      output.product=result[0];
-     // console.log(output);
-      //var family_id=output.product["family_id"];
-      var sql2=`select * from wy_index_product where laptop_list=?`;
-      pool.query(sql2,[lid],(err,result)=>{
+      output.products=result[0];
+      //console.log(output);
+      var family_id=output.products["family_id"];
+      var sql2=`select spec,lid from wy_product where family_id=?`;
+      pool.query(sql2,[family_id],(err,result)=>{
         if(err) console.log(err);
-        output.productList=result;
-//        console.log(output);
-        var sql3=`select * from wy_laptop_pic where laptop_id=?`
+        output.specs=result;
+        //console.log(output);
+        var sql3=`select * from wy_product_pic where laptop_id=?`;
         pool.query(sql3,[lid],(err,result)=>{
           if(err) console.log(err);
           output.pics=result;
-//          console.log(output);
+          //console.log(output);
+        });
+        var sql4=`select * from wy_details_size where lid=?`;
+        pool.query(sql4,[lid],(err,result)=>{
+          if(err) console.log(err);
+          output.size=result;
           res.send(output);
         })
       })
@@ -40,5 +45,8 @@ details.get("/",(req,res)=>{
     res.send(output);
   }
 })
-//导出商品列表路由  product_list
+
+
+//导出商品详情路由器对象   /details
 module.exports=details;
+

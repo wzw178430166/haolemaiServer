@@ -1,4 +1,4 @@
-//创建express模块555555555555555
+//创建express模块
 const express=require('express');
 //express下创建用户路由器    
 var router=express.Router();
@@ -67,6 +67,7 @@ router.get("/cart",(req,res)=>{
     //3:json
   })
 
+  
 //导出用户路由器对象   /user
 module.exports=router;
 
