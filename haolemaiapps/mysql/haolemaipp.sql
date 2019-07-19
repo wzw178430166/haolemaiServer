@@ -38,10 +38,12 @@ CREATE TABLE wy_cart(
   count   INT,
   uid     INT
 );
-INSERT INTO wy_cart VALUES(null,'011.jpg',100,'罗技鼠标',1,1);
-INSERT INTO wy_cart VALUES(null,'012.jpg',110,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',101,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'011.jpg',102,'罗技鼠标4',1,1);
+INSERT INTO wy_cart VALUES(null,'/img/cart/487.jpg',238,'c',1,1);
+INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',278,'内存条',1,1);
+INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',268,'罗技鼠标3',1,1);
+INSERT INTO wy_cart VALUES(null,'',102,'罗技鼠标4',1,1);
+
+
 
 
 ##################################################################################################
@@ -467,12 +469,13 @@ CREATE TABLE wy_details_size(
   yardage_i VARCHAR(128),       
   yardage_u VARCHAR(128)   
 );
+/**商品的（每对鞋子存有的尺寸）**/
 INSERT INTO wy_details_size VALUES 
 (1,1,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(2,1,'35','35.5','36','38','39','39.5','40','42','43','44'),
-(3,1,'35.5','36.5','37','38','39','40.5','41.5','42.5','43','44'),
-(4,2,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(5,2,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14');
+(2,2,'35','35.5','36','38','39','39.5','40','42','43','44'),
+(3,3,'35.5','36.5','37','38','39','40.5','41.5','42.5','43','44'),
+(4,4,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
+(5,5,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14');
 
 /**商品详情信息    商品详情页**/
 CREATE TABLE wy_product(
@@ -569,40 +572,26 @@ INSERT INTO wy_meticulous VALUES
   lg VARCHAR(128)             #大图片路径
 );
  
-/**商品图片列表   轮播图 **/
+/**商品详情最底下的图片**/
 INSERT INTO wy_details_pic VALUES
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 2, './message/nav1/nav2.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 2, './message/nav1/nav2.2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-
+(NULL, 1, 'http://127.0.0.1:8095/img/details/8.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/details/12.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/details/13.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/details/14.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.1.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.2.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.3.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.4.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.5.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.11.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.12.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.13.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.14.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.15.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.16.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg');
 
 
 #######################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
