@@ -32,16 +32,14 @@ INSERT INTO users VALUES(NULL,'tom','123','18320006057');
 /****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  img_url VARCHAR(25),
+  lid VARCHAR(25),
   price   DECIMAL(10,2),
-  title   VARCHAR(255),
-  count   INT,
-  uid     INT
+  size   VARCHAR(255)
 );
-INSERT INTO wy_cart VALUES(null,'/img/cart/487.jpg',238,'c',1,1);
-INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',278,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',268,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'',102,'罗技鼠标4',1,1);
+INSERT INTO wy_cart VALUES(null,1,238,'35');
+INSERT INTO wy_cart VALUES(null,2,278,'37');
+INSERT INTO wy_cart VALUES(null,3,268,'22');
+INSERT INTO wy_cart VALUES(null,4,102,'30');
 
 
 
