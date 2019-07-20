@@ -32,7 +32,7 @@ INSERT INTO users VALUES(NULL,'tom','123456a','18320006057');
 /****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  lid VARCHAR(25),
+  lid VARCHAR(255),
   price   DECIMAL(10,2),
   size   VARCHAR(255),
   img    VARCHAR(255),
