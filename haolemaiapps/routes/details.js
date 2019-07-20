@@ -6,14 +6,15 @@ var details=express.Router();
 var pool=require('../pool/pool.js');
 
 details.get("/",(req,res)=>{
-    console.log(req.query);
+ //   console.log(req.query);
   var lid=req.query.lid;
-  console.log(lid);
+ // console.log(lid);
   var output={
     products:{},
     specs:[],
     pics:[],
-    size:[]
+    size:[],
+    dibu:[]
   }
   if(lid!==undefined){
     var sql1=`select * from wy_product where lid=?`;
@@ -21,24 +22,29 @@ details.get("/",(req,res)=>{
       if(err) console.log(err);
       output.products=result[0];
       //console.log(output);
-      var family_id=output.products["family_id"];
-      var sql2=`select spec,lid from wy_product where family_id=?`;
-      pool.query(sql2,[family_id],(err,result)=>{
+     // var family_id=output.products["family_id"];
+      var sql2=`select * from wy_meticulous where lid=?`;
+      pool.query(sql2,[lid],(err,result)=>{
         if(err) console.log(err);
         output.specs=result;
-        //console.log(output);
+       // console.log(result);
         var sql3=`select * from wy_product_pic where laptop_id=?`;
         pool.query(sql3,[lid],(err,result)=>{
           if(err) console.log(err);
           output.pics=result;
           //console.log(output);
         });
-        var sql4=`select * from wy_details_size where lid=?`;
+        var sql4=`select yardage_a,yardage_b,yardage_c,yardage_d,yardage_e,yardage_f,yardage_g,yardage_h,yardage_i,yardage_u from wy_details_size where lid=?`;
         pool.query(sql4,[lid],(err,result)=>{
           if(err) console.log(err);
           output.size=result;
+        });
+        var sql5=`select img from wy_details_pic where laptop_id=?`;
+        pool.query(sql5,[lid],(err,result)=>{
+          if(err) console.log(err);
+          output.dibu=result;
           res.send(output);
-        })
+        });
       })
     })
   }else{
@@ -46,7 +52,7 @@ details.get("/",(req,res)=>{
   }
 })
 
-
+  
 //导出商品详情路由器对象   /details
 module.exports=details;
 

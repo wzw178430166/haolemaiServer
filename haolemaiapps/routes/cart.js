@@ -25,7 +25,21 @@ var pool=require('../pool/pool.js');
     })
     //3:json
   })
-
+  
+    //加入购物车   //lid   price  size
+    Cart.get('/add',function(req,res){
+      var obj1=req.query;
+      console.log(obj1);
+      pool.query('INSERT INTO wy_cart SET?',[obj1],function(err,result){
+       if(err) throw err;
+       if(result.affectedRows>0){
+     res.send('1');
+    }else{
+     res.send('0');
+    }
+     });
+    });
+   
 
 //导出购物车路由器对象   /shopping
 module.exports=Cart;

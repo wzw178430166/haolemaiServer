@@ -32,16 +32,12 @@ INSERT INTO users VALUES(NULL,'tom','123','18320006057');
 /****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  img_url VARCHAR(25),
+  lid VARCHAR(25),
   price   DECIMAL(10,2),
-  title   VARCHAR(255),
-  count   INT,
-  uid     INT
+  size   VARCHAR(255)
 );
-INSERT INTO wy_cart VALUES(null,'/img/cart/487.jpg',238,'c',1,1);
-INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',278,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',268,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'',102,'罗技鼠标4',1,1);
+/*INSERT INTO wy_cart VALUES(null,1,238,'35');*/
+
 
 
 
@@ -278,11 +274,11 @@ CREATE TABLE shangpin_list(
   paixu  INT(100),
   biaoji INT(50)
 );
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi1.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,1,1);
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,2,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi1.jpg","杂牌女式EPIC REACT FLYKNIT柔软回弹跑步鞋","杂牌鞋5.5折封顶",319,4,1,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.jpg","男士休闲便捷鞋，清爽透气","杂牌6.5折封顶",119,4,2,1);
 /*循环测试数据*/
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,3,1);
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,4,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi3.jpg","又酷又帅，穿了没人爱","某知名品牌3.5折封顶",819,4,3,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi1.png","高仿跑步鞋，便宜耐穿","杂牌8.5折封顶",19,4,4,1);
 INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,5,1);
 INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,6,1);
 INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,7,1);
@@ -469,12 +465,13 @@ CREATE TABLE wy_details_size(
   yardage_i VARCHAR(128),       
   yardage_u VARCHAR(128)   
 );
+/**商品的（每对鞋子存有的尺寸）**/
 INSERT INTO wy_details_size VALUES 
 (1,1,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(2,1,'35','35.5','36','38','39','39.5','40','42','43','44'),
-(3,1,'35.5','36.5','37','38','39','40.5','41.5','42.5','43','44'),
-(4,2,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(5,2,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14');
+(2,2,'35','35.5','36','38','39','39.5','40','42','43','44'),
+(3,3,'35.5','36.5','37','38','39','40.5','41.5','42.5','43','44'),
+(4,4,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
+(5,5,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14');
 
 /**商品详情信息    商品详情页**/
 CREATE TABLE wy_product(
@@ -501,15 +498,15 @@ CREATE TABLE wy_product(
 
 /**商品详情信息**/
 INSERT INTO wy_product VALUES 
-(1,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','215','499','此商品仅支持退货，不支持换货。','女式 卡骆驰女士都会街头帆布便鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'聚划算','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','77','211','此商品仅支持退货，不支持换货。','男式 李宁卓逸轻便一体织百搭休闲鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',150123456789,'32码粉红色','运动鞋','产品详细说明',2011,true);
+(1,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1564070351000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','215','499','此商品仅支持退货，不支持换货。','女式 卡骆驰女士都会街头帆布便鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1568044751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,1,'聚划算','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','77','211','此商品仅支持退货，不支持换货。','男式 李宁卓逸轻便一体织百搭休闲鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1565884751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1565884751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true);
 
 
 
@@ -524,13 +521,13 @@ CREATE TABLE wy_product_pic(
 
 /**商品详情信息图片  大中小图片**/
 INSERT INTO wy_product_pic VALUES
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.jpg','./message/nav3/md/md1.jpg','./message/nav3/big/big1.jpg'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/2.jpg','./message/nav3/md/md2.png','./message/nav3/big/big2.png'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/4.jpg','./message/nav3/md/md3.png','./message/nav3/big/big2.png'),
-(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/5.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 2, 'http://127.0.0.1:8095/img/lunbotu/2.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 2, 'http://127.0.0.1:8095/img/lunbotu/2.2.jpg','./message/nav3/md/md4.png','./message/nav3/big/big3.png'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.1.jpg','./message/nav3/md/md1.jpg','./message/nav3/big/big1.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.2.jpg','./message/nav3/md/md2.png','./message/nav3/big/big2.png'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.4.jpg','./message/nav3/md/md3.png','./message/nav3/big/big2.png'),
+(NULL, 1, 'http://127.0.0.1:8095/img/lunbotu/1.5.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/lunbotu/2.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/lunbotu/2.1.jpg','./message/nav3/md/md4.png','./message/nav3/big/big3.png'),
 (NULL, 2, 'http://127.0.0.1:8095/img/lunbotu/2.3.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
 (NULL, 2, 'http://127.0.0.1:8095/img/lunbotu/2.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
 (NULL, 3, 'http://127.0.0.1:8095/img/lunbotu/3.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
@@ -539,13 +536,15 @@ INSERT INTO wy_product_pic VALUES
 (NULL, 3, 'http://127.0.0.1:8095/img/lunbotu/3.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg');
 
                                  /* 产品的详细信息*/
-   CREATE TABLE wy_product(
+   CREATE TABLE wy_meticulous(
   lid INT PRIMARY KEY AUTO_INCREMENT, 
   family_id INT,              #所属类型型号家族编号
   product_ID VARCHAR(128),         #商品编号
   sex VARCHAR(128),              #性别
+  vamp VARCHAR(32),             #鞋面材质
   texture VARCHAR(128),        #鞋底材质
   uppers VARCHAR(128),         #鞋帮
+<<<<<<< HEAD
   closed DECIMAL(10,2),        #闭合方式
   actions DECIMAL(10,2),      #功能
   suit VARCHAR(64),        #服务承诺 此商品仅支持退货，不支持换货。
@@ -560,6 +559,51 @@ INSERT INTO wy_product_pic VALUES
   sold_count INT,             #已售出的数量
   is_onsale BOOLEAN           #是否促销中
 );                              
+=======
+  closed VARCHAR(128),        #闭合方式
+  actions VARCHAR(128),      #功能
+  sites VARCHAR(64),        # 适用场地
+  season VARCHAR(32),          #季节
+  temperature VARCHAR(128),      #温度
+  seasonal VARCHAR(128)     #应季月份
+);   
+
+INSERT INTO wy_meticulous VALUES
+(1,1,'17741192','0,1','布料','橡胶底','低帮','系带','轻便,耐磨,防滑,透气','室外硬地,公路','春','适中','11月,10月,9月,8月,7月,6月,5月,4月,3月'),
+(NULL,1,'17537931','1','网面','低帮','低帮','系带','轻便,耐磨,防滑,透气','室外硬地,公路','秋,夏,春','适中','9月,8月,7月,6月,5月,4月,3月'),
+(NULL,1,'17741442','0','牛皮','橡胶底','低帮','系带','轻便,耐磨,防滑,透气','室外硬地,公路','秋','适中','11月,8月,7月,6月,5月,4月,3月'),
+(NULL,1,'17721132','0,1','牛皮','橡胶底','低帮','系带','轻便,耐磨,防滑,透气','室外硬地,公路','春','适中','11月,10月,9月');
+
+
+ /* 商品详情最底下的图片*/
+ CREATE TABLE wy_details_pic(
+  pid INT PRIMARY KEY AUTO_INCREMENT,
+  laptop_id INT,              #商品编号
+  img VARCHAR(128),            #图片路径
+  href VARCHAR(128),            #商品详情地址
+  lg VARCHAR(128)             #大图片路径
+);
+ 
+/**商品详情最底下的图片**/
+INSERT INTO wy_details_pic VALUES
+(NULL, 1, 'http://127.0.0.1:8095/img/details/8.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/details/12.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/details/13.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 1, 'http://127.0.0.1:8095/img/details/14.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.1.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.2.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.3.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.4.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:8095/img/details/dibu/2.5.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.11.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.12.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.13.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.14.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.15.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.16.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg');
+
+
+>>>>>>> 56b6f186da26ba5aa003a3c862001cfcb35d07c7
 #######################################################################################################
 
 
