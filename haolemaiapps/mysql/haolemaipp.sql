@@ -276,11 +276,11 @@ CREATE TABLE shangpin_list(
   paixu  INT(100),
   biaoji INT(50)
 );
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi1.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,1,1);
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,2,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi1.jpg","杂牌女式EPIC REACT FLYKNIT柔软回弹跑步鞋","杂牌鞋5.5折封顶",319,4,1,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.jpg","男士休闲便捷鞋，清爽透气","杂牌6.5折封顶",119,4,2,1);
 /*循环测试数据*/
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,3,1);
-INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,4,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi3.jpg","又酷又帅，穿了没人爱","某知名品牌3.5折封顶",819,4,3,1);
+INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi1.png","高仿跑步鞋，便宜耐穿","杂牌8.5折封顶",19,4,4,1);
 INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,5,1);
 INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,6,1);
 INSERT INTO shangpin_list VALUES(null,"http://127.0.0.1:8095/img/appimg/shangpinlist/xie/xiezi2.png","Nike耐克女式EPIC REACT FLYKNIT柔软回弹跑步鞋","耐克6.5折封顶",519,4,7,1);
