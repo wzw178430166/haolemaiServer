@@ -12,7 +12,7 @@ console.log("listen:8095");
 	secret:"128位字符串",
 	resave:true,
 	saveUninitialized:true
-  }))
+  })) 
 //npm i -save cors
 server.use(cors({
 
