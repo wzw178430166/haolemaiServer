@@ -36,10 +36,8 @@ CREATE TABLE wy_cart(
   price   DECIMAL(10,2),
   size   VARCHAR(255)
 );
-INSERT INTO wy_cart VALUES(null,1,238,'35');
-INSERT INTO wy_cart VALUES(null,2,278,'37');
-INSERT INTO wy_cart VALUES(null,3,268,'22');
-INSERT INTO wy_cart VALUES(null,4,102,'30');
+/*INSERT INTO wy_cart VALUES(null,1,238,'35');*/
+
 
 
 
