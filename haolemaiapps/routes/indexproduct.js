@@ -76,7 +76,47 @@ var pool=require('../pool/pool.js');
                 })
             })
         })
+    //筛选列表分类
+       index.get("/fenlei1",(req,res)=>{
+           //查询index_fenlei表中，title字节段重复的数据
+           var sql="SELECT title FROM index_fenlei group by title";
+           pool.query(sql,(err,result)=>{
+               if(err) throw err;
+               res.send(result);
+               console.log(result);
+           })
+       })
+    //筛选列表品牌。。。
+        index.get("/brand1",(req,res)=>{
+            // 查询index_fenlei 表中，brand字节段重复的数据和次数
+            // var sql="select brand,count(*) as count from index_fenlei group by brand having count>1;";
+            //查询表中brand的值，去除重复的数据 
+            var sql="select brand from index_fenlei group by brand";
+            pool.query(sql,(err,result)=>{
+                if(err) throw err;
+                res.send(result);
+            })
+        })
+    //筛选尺寸。。。
+    
 
+    //筛选商品商品，未成功
+    index.get("/shaixuan",(req,res)=>{
+        //根据传回来的id，查询index_fenlei表中，品牌
+        // var lid = req.query.lid;
+        //  if(!lid){
+        //      res.send("接收错误")
+        //  }
+        var sql = "select * from index_fenlei where title='跑步鞋'"
+        pool.query(sql,(err,result)=>{
+            if(err){
+                res.send({code:0})
+            }else{
+                res.send(result);
+            }
+          
+        })
+    })
 
 //lalalalalala
 //导出首页数据路由   /index
