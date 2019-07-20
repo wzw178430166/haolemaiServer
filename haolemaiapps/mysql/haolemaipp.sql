@@ -34,7 +34,9 @@ CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
   lid VARCHAR(25),
   price   DECIMAL(10,2),
-  size   VARCHAR(255)
+  size   VARCHAR(255),
+  img    VARCHAR(255),
+  lname  VARCHAR(255)
 );
 /*INSERT INTO wy_cart VALUES(null,1,238,'35');*/
 
@@ -544,22 +546,6 @@ INSERT INTO wy_product_pic VALUES
   vamp VARCHAR(32),             #鞋面材质
   texture VARCHAR(128),        #鞋底材质
   uppers VARCHAR(128),         #鞋帮
-<<<<<<< HEAD
-  closed DECIMAL(10,2),        #闭合方式
-  actions DECIMAL(10,2),      #功能
-  suit VARCHAR(64),        #服务承诺 此商品仅支持退货，不支持换货。
-  lname VARCHAR(32),          #商品名称
-  logo_img VARCHAR(128),      #商标
-  logo_test VARCHAR(128),     #商标文字
-  project VARCHAR(128),       #专题列表地址
-  shelf_time BIGINT,          #下架时间
-  spec VARCHAR(64),           #规格/颜色
-  category VARCHAR(32),       #所属分类
-  details VARCHAR(1024),      #产品详细说明
-  sold_count INT,             #已售出的数量
-  is_onsale BOOLEAN           #是否促销中
-);                              
-=======
   closed VARCHAR(128),        #闭合方式
   actions VARCHAR(128),      #功能
   sites VARCHAR(64),        # 适用场地
@@ -602,8 +588,26 @@ INSERT INTO wy_details_pic VALUES
 (NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.15.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
 (NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.16.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg');
 
+/**商品的（每对鞋子存有的尺寸）**/
+CREATE TABLE wy_details_img(
+  lid INT PRIMARY KEY AUTO_INCREMENT,   /*每对鞋的id*/
+  family_id INT,             /*种类归类*/
+  img1 VARCHAR(128),      /*尺寸*/
+  img2 VARCHAR(128),      
+  img3 VARCHAR(128),        
+  img4 VARCHAR(128),   
+  img5 VARCHAR(128),       
+  img6 VARCHAR(128)      
+);
+/**商品的（每对鞋子存有的尺寸）**/
+INSERT INTO wy_details_img VALUES 
+(1,1,'http://127.0.0.1:8095/img/details/1.png','http://127.0.0.1:8095/img/details/2.png','http://127.0.0.1:8095/img/details/3.png','http://127.0.0.1:8095/img/details/4.png','http://127.0.0.1:8095/img/details/5.png','http://127.0.0.1:8095/img/details/6.png'),
+(2,2,'http://127.0.0.1:8095/img/details/2.1.jpg','http://127.0.0.1:8095/img/details/2.2.jpg','http://127.0.0.1:8095/img/details/2.3.jpg','http://127.0.0.1:8095/img/details/2.4.jpg',NULL,NULL),
+(3,3,'http://127.0.0.1:8095/img/details/3.1.jpg','http://127.0.0.1:8095/img/details/3.2.jpg','http://127.0.0.1:8095/img/details/3.3.jpg','http://127.0.0.1:8095/img/details/3.4.jpg','http://127.0.0.1:8095/img/details/3.5.jpg',NULL),
+(4,4,'http://127.0.0.1:8095/img/details/4.1.jpg','http://127.0.0.1:8095/img/details/4.2.jpg','http://127.0.0.1:8095/img/details/4.3.jpg',NULL,NULL,NULL);
 
->>>>>>> 56b6f186da26ba5aa003a3c862001cfcb35d07c7
+
+
 #######################################################################################################
 
 

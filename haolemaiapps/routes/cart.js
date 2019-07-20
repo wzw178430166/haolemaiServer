@@ -9,16 +9,18 @@ var pool=require('../pool/pool.js');
 
    //登录后查看自己购物车的商品
  Cart.get("/cart",(req,res)=>{ 
+   var aa=req.query.id;
+   console.log(aa);
     //1:参数(无参数)
-    var uid = req.session.uid;
-    console.log(uid+'niha');    //登录 后
-    if(!uid){
-      res.send({code:-1,msg:"请先登录！"});
-      return;
-    }
+    //var uid = req.session.uid;
+   // console.log(uid+'niha');    //登录 后
+    // if(!uid){
+    //   res.send({code:-1,msg:"请先登录！"});
+    //   return;
+    // }
     //2:sql  //传一个uid =  一个值 1  数据库只有1
-    var sql = "SELECT id,img_url,title,price,count FROM wy_cart WHERE uid = ?";
-    pool.query(sql,[uid],(err,result)=>{
+    var sql = "SELECT img,price,size,lname FROM wy_cart WHERE id =?";
+    pool.query(sql,[aa],(err,result)=>{
       console.log(result)
       if(err)throw err;
       res.send({code:1,data:result})
@@ -26,7 +28,7 @@ var pool=require('../pool/pool.js');
     //3:json
   })
   
-    //加入购物车   //lid   price  size
+    //加入购物车   //lid   price  size  标题  小图片
     Cart.get('/add',function(req,res){
       var obj1=req.query;
       console.log(obj1);

@@ -14,7 +14,8 @@ details.get("/",(req,res)=>{
     specs:[],
     pics:[],
     size:[],
-    dibu:[]
+    dibu:[],
+    img:[]
   }
   if(lid!==undefined){
     var sql1=`select * from wy_product where lid=?`;
@@ -43,6 +44,12 @@ details.get("/",(req,res)=>{
         pool.query(sql5,[lid],(err,result)=>{
           if(err) console.log(err);
           output.dibu=result;
+        //  res.send(output);
+        });
+        var sql6=`select img from wy_details_pic where laptop_id=?`;
+        pool.query(sql6,[lid],(err,result)=>{
+          if(err) console.log(err);
+          output.img=result;
           res.send(output);
         });
       })
