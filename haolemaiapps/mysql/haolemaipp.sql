@@ -20,10 +20,10 @@ CREATE TABLE users(
 );
 
 #往用户数据表插入数据（定义向前台传递的接口）
-INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545..','13533870622');
-INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545..','13660132410');
-INSERT INTO users VALUES(NULL,'www178430166@qq.com','br18255545..','18320006057');
-INSERT INTO users VALUES(NULL,'tom','123','18320006057');
+INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545','13533870622');
+INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545','13660132410');
+INSERT INTO users VALUES(NULL,'www178430166@qq.com','br18255545','18320006057');
+INSERT INTO users VALUES(NULL,'tom','123456a','18320006057');
 
 
 
@@ -32,16 +32,14 @@ INSERT INTO users VALUES(NULL,'tom','123','18320006057');
 /****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  img_url VARCHAR(25),
+  lid VARCHAR(25),
   price   DECIMAL(10,2),
-  title   VARCHAR(255),
-  count   INT,
-  uid     INT
+  size   VARCHAR(255),
+  img    VARCHAR(255),
+  lname  VARCHAR(255)
 );
-INSERT INTO wy_cart VALUES(null,'/img/cart/487.jpg',238,'c',1,1);
-INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',278,'内存条',1,1);
-INSERT INTO wy_cart VALUES(null,'/img/cart/4871.jpg',268,'罗技鼠标3',1,1);
-INSERT INTO wy_cart VALUES(null,'',102,'罗技鼠标4',1,1);
+/*INSERT INTO wy_cart VALUES(null,1,238,'35');*/
+
 
 
 
@@ -595,6 +593,25 @@ INSERT INTO wy_details_pic VALUES
 (NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.14.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
 (NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.15.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
 (NULL, 3, 'http://127.0.0.1:8095/img/details/dibu/3.16.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg');
+
+/**商品的（每对鞋子存有的尺寸）**/
+CREATE TABLE wy_details_img(
+  lid INT PRIMARY KEY AUTO_INCREMENT,   /*每对鞋的id*/
+  family_id INT,             /*种类归类*/
+  img1 VARCHAR(128),      /*尺寸*/
+  img2 VARCHAR(128),      
+  img3 VARCHAR(128),        
+  img4 VARCHAR(128),   
+  img5 VARCHAR(128),       
+  img6 VARCHAR(128)      
+);
+/**商品的（每对鞋子存有的尺寸）**/
+INSERT INTO wy_details_img VALUES 
+(1,1,'http://127.0.0.1:8095/img/details/1.png','http://127.0.0.1:8095/img/details/2.png','http://127.0.0.1:8095/img/details/3.png','http://127.0.0.1:8095/img/details/4.png','http://127.0.0.1:8095/img/details/5.png','http://127.0.0.1:8095/img/details/6.png'),
+(2,2,'http://127.0.0.1:8095/img/details/2.1.jpg','http://127.0.0.1:8095/img/details/2.2.jpg','http://127.0.0.1:8095/img/details/2.3.jpg','http://127.0.0.1:8095/img/details/2.4.jpg',NULL,NULL),
+(3,3,'http://127.0.0.1:8095/img/details/3.1.jpg','http://127.0.0.1:8095/img/details/3.2.jpg','http://127.0.0.1:8095/img/details/3.3.jpg','http://127.0.0.1:8095/img/details/3.4.jpg','http://127.0.0.1:8095/img/details/3.5.jpg',NULL),
+(4,4,'http://127.0.0.1:8095/img/details/4.1.jpg','http://127.0.0.1:8095/img/details/4.2.jpg','http://127.0.0.1:8095/img/details/4.3.jpg',NULL,NULL,NULL);
+
 
 
 #######################################################################################################
