@@ -19,7 +19,7 @@ product.get("/",(req,res)=>{
     pool.query(sql1,[lid],(err,result)=>{
       if(err) console.log(err);
       output.product=result[0];
-     // console.log(output);
+     // console.log(output+1);
       //var family_id=output.product["family_id"];
       var sql2=`select * from wy_index_product where laptop_list=?`;
       pool.query(sql2,[lid],(err,result)=>{
