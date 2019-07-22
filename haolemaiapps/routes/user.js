@@ -9,8 +9,8 @@ var pool=require('../pool/pool.js');
  //添加路由（用户注册）
  router.post('/add',function(req,res){
 	 var obj1=req.body;
-	 console.log(obj1);
-	 pool.query('SELECT count(*) as counta FROM users WHERE phone=?',[obj1],function(err,result){
+	 console.log(obj1.phone);
+	 pool.query('SELECT count(*) as counta FROM users WHERE phone=?',[obj1.phone],function(err,result){
 	  if(err) throw err;
 	  if(result[0].counta > 0){
         res.send('1')
