@@ -32,12 +32,15 @@ INSERT INTO users VALUES(NULL,'tom','123456a','18320006057');
 /****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  uid INT,            /*对应用户的id*/
+      /*对应用户的id*/
   lid VARCHAR(255),
   price   DECIMAL(10,2),
   size   VARCHAR(255),
   img    VARCHAR(255),
-  lname  VARCHAR(255)
+  lname  VARCHAR(255),
+  subtitle VARCHAR(255),
+  title_sec VARCHAR(255),
+  title VARCHAR(255)
 );
 /*INSERT INTO wy_cart VALUES(null,1,238,'35');*/
 
@@ -511,9 +514,9 @@ CREATE TABLE wy_product(
 
 /**商品详情信息**/
 INSERT INTO wy_product VALUES 
-(1,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1564070351000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','215','499','此商品仅支持退货，不支持换货。','女式 卡骆驰女士都会街头帆布便鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1568044751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'聚划算','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','77','211','此商品仅支持退货，不支持换货。','男式 李宁卓逸轻便一体织百搭休闲鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(1,1,'限时特卖','满2件件200元，还差1件享受此活动','满折','满2件件200元，还差1件享受此活动。','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1564070351000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,1,'限时特卖','满500元减100元，还差311元享受此活动。','满折','【下单8折】crocs度假嗨起 >>','215','499','此商品仅支持退货，不支持换货。','女式 卡骆驰女士都会街头帆布便鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1568044751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
+(NULL,1,'聚划算','李宁夏装特惠','满折','【下单8折】crocs度假嗨起 >>','77','211','此商品仅支持退货，不支持换货。','男式 李宁卓逸轻便一体织百搭休闲鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
 (NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1565884751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
 (NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
 (NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:8095/index',1565884751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
