@@ -16,7 +16,7 @@ console.log("listen:8095");
 //npm i -save cors
 server.use(cors({
 
-	origin:"http://127.0.0.1:8080",
+	origin:["http://127.0.0.1:8080","http://127.0.0.1:8081"],
 	
 	// origin:"*", //任意跨不了域
 	  credentials:true

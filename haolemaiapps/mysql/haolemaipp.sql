@@ -22,7 +22,7 @@ CREATE TABLE users(
 #往用户数据表插入数据（定义向前台传递的接口）
 INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545','13533870622');
 INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545','13660132410');
-INSERT INTO users VALUES(NULL,'www178430166@qq.com','br18255545','18320006057');
+INSERT INTO users VALUES(NULL,'www178430166@qq.com','w1111111111','18320006057');
 INSERT INTO users VALUES(NULL,'tom','123456a','18320006057');
 
 
@@ -32,6 +32,7 @@ INSERT INTO users VALUES(NULL,'tom','123456a','18320006057');
 /****购物车11****/
 CREATE TABLE wy_cart(
   id INT PRIMARY KEY AUTO_INCREMENT,
+  uid INT,            /*对应用户的id*/
   lid VARCHAR(255),
   price   DECIMAL(10,2),
   size   VARCHAR(255),
