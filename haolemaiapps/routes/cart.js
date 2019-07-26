@@ -9,7 +9,7 @@ var pool=require('../pool/pool.js');
 
    //登录后查看自己购物车的商品
  Cart.get("/cart",(req,res)=>{    //注册的时候往购物车数据表添加一个uid
-   //var aa=req.query.id;
+   var aa=req.query.phone;
    //console.log(aa);
     //1:参数(无参数)
       var uid = req.session.uid;
@@ -19,8 +19,8 @@ var pool=require('../pool/pool.js');
       return;
     }
     //2:sql  //传一个uid =  一个值 1  数据库只有1    //把session的uid存在数据库中当前的用户
-    var sql = "SELECT * FROM wy_cart";  //这里找不到数组
-    pool.query(sql,[uid],(err,result)=>{
+    var sql = "SELECT * FROM wy_cart WHERE phone=?";  //这里找不到数组
+    pool.query(sql,[aa],(err,result)=>{
       console.log(result)
       if(err)throw err;
       res.send({code:1,data:result})
@@ -58,7 +58,19 @@ var pool=require('../pool/pool.js');
 
     });
    
-
+    //功能四:删除购物车中商品 112~123
+    Cart.get("/delItem",(req,res)=>{
+  //1:参数购物车id
+  var id = req.query.lid;
+  //2:sql 删除指定数据
+  var sql = "DELETE FROM wy_cart WHERE lid = ?";
+  //3:json
+  pool.query(sql,[id],(err,result)=>{
+    if(err)throw err;
+    console.log(result);
+    res.send({code:1,msg:"删除成功"});
+  })
+});
 //导出购物车路由器对象   /shopping
 module.exports=Cart;
 
